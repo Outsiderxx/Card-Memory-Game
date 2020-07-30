@@ -96,10 +96,34 @@ progress {
     height: 100%;
     width: 50%;
     margin: 0 auto;
+    perspective: 600px;
+}
+
+.cardWrap {
+    transform-style: preserve-3d;
+    transform: rotateY(-180deg);
+    transition: transform 0.5s;
+}
+
+.reverse {
+    transform: rotateY(0deg);
 }
 
 .card {
-    background-image: url('../res/back.png');
+    position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.cardFront {
+    z-index: 1;
+    transform: rotateY(0deg);
+}
+
+.cardBack {
+    z-index: 2;
+    background-image: url('../res/back.png');
+    transform: rotateY(180deg);
 }

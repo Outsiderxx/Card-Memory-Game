@@ -5,6 +5,7 @@ export default class GameInfo extends HTMLElement{
         this.matchNum = 0;
         this.pastTime = 0;
         this.gameDuration = 60;
+        this.startTime = 0;
         this.timerText = document.querySelector('#timer');
         this.matchText = document.querySelector('#match');
         this.progressBar = document.querySelector('progress');
@@ -20,15 +21,19 @@ export default class GameInfo extends HTMLElement{
     }
 
     startCountDown() {
-        this.intervalID = setInterval(this.update.bind(this), 1000);
+        this.startTime = Date.now();
+        this.intervalID = setInterval(this.update.bind(this), 1 / 60);
     }
 
     update() {
-        this.pastTime++;
-        this.timerText.textContent = `timer: 00 : ${this.gameDuration - this.pastTime}`;
+        const currentTime = Date.now();
+        this.pastTime = (currentTime - this.startTime) / 1000;
+        this.timerText.textContent = 'timer: 00 : ' + (this.gameDuration - this.pastTime < 10 ? '0' : '') + `${Math.floor(this.gameDuration - this.pastTime)}`;
         this.progressBar.value = this.pastTime / this.gameDuration * 100;
-        if (this.pastTime === this.gameDuration) {
+        if (this.pastTime >= this.gameDuration) {
             clearInterval(this.intervalID);
+            this.timerText.textContent = 'timer: 00 : 00';
+            this.progressBar.value = 100;
             this.dispatchEvent(new CustomEvent('timeUp', { detail: { isWin: false } }));
         }
     }
