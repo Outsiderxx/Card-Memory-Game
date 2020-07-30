@@ -1,0 +1,105 @@
+html {
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: darkblue;
+    text-align: center;
+    line-height: 50px;
+}
+
+p {
+    margin: 0;
+    font-family: fantasy;
+}
+
+header {
+    width: 100%;
+    height: 15%;
+    margin: 0;
+    background-color: bisque;
+}
+
+main {
+    position: relative;
+    background-color: darkcyan;
+    height: 250px;
+}
+
+footer {
+    background-color: bisque;
+    height: 15%;
+    margin: 0 auto;
+}
+
+#timer {
+    margin: 5px;
+    width: 50%;
+    float: left;
+}
+
+#match {
+    text-align: right;
+    padding: 5px;
+}
+
+progress {
+    clear: both;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+#popUpDialogBG {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+
+#popUpDialog {
+    background-color: rgb(31, 106, 109);
+    margin: 50px auto;
+    height: 60%;
+    width: 60%;
+    border:3px solid black;
+}
+
+#popUpDialog pre{
+    text-align: center;
+    margin: 30px;
+}
+
+#popUpDialog button{
+    display: block;
+    margin: 0 auto;
+}
+
+#cardTable {
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px;
+    row-gap: 10px;
+    align-items: stretch;
+    justify-content: space-around;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.card {
+    background-image: url('../res/back.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

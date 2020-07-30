@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./style/game.css">
+        <script type="module" src="./index.js" defer></script>
+        <script type="module" src="./src/Game.js" defer></script>
+        <script type="module" src="./src/CardTable.js" defer></script>
+        <script type="module" src="./src/GameInfo.js" defer></script>
+        <script type="module" src="./src/PopUpDialog.js" defer></script>
+        <title>Card Memory Game</title>
+    </head>
+    <body id="gameContainer">
+        <header>
+            <h1> Welcome to Card Memory Game !!!</h1>
+        </header>
+        <main>
+            <section id="cardTable">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </section>
+            <section id="popUpDialogBG">
+                <div id="popUpDialog">
+                    <pre>Press  confirm  button  to  start</pre>
+                    <button type="button">START</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p id="timer">timer: 1 : 00</p>
+            <p id="match">matchNum 0 / 8</p>
+            <progress max="100" value="0"></progress>
+        </footer>    
+    </body>
+</html>
